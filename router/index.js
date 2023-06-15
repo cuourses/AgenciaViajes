@@ -3,15 +3,12 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Inicio');
+  res.render('../view/inicio.pug');
 });
 
 router.get('/nosotros', (req, res) => {
-  res.send('nosotros');
+  res.render('../view/nosotros.pug');
 });
 
-router.get('/contacto', (req, res) => {
-  res.send('contacto');
-});
 
 export default router;
