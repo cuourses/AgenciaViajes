@@ -1,5 +1,32 @@
 extends ./layout/index
 
 block contenido
-  main(class="container")
-    h1= pagina
+  main(class="container mt-5")
+    div(class="row")
+      div(class="col-md-5")
+        img(class="img-fluid" src="img/nosotros.jpg", alt="imagen nosotros")
+      div(class="col-md-7")
+        h1= pagina
+        blockquote  ipsum dolor sit amet, consectetur adipiscing elit. Aliquam magna elit, fermentum eget lectus eu, laoreet hendrerit lectus. Nulla lobortis accumsan nisi nec maximus. Maecenas sodales ipsum id massa dapibus placerat. Donec rhoncus dapibus dui, at consectetur quam accumsan nec. Sed et leo sed erat cursus egestas at a sem. Morbi sollicitudin turpis ut rhoncus rutrum. 
+
+        p ex nunc, euismod id scelerisque et, lobortis vitae felis. Phasellus vulputate lectus dictum dui eleifend, sed consectetur libero molestie. Quisque fringilla, ante nec dignissim lacinia, est odio ullamcorper nisi, in auctor augue lacus ut tortor. Proin elementum ut tortor ut maximus. Vivamus blandit, ante et rhoncus bibendum, turpis sem malesuada eros, sit amet mattis augue sem sed arcu.
+        
+        p vel sapien ac nisl tempor tempor. Morbi accumsan leo ex, ut convallis est porttitor non. Vestibulum eget turpis pellentesque libero maximus mattis non at enim. Ut ornare luctus tempus. Cras ac gravida metus, nec facilisis ante.
+        
+  div(class="listado-iconos")
+    div(class="container mt-5 py-5 text-center")
+      div(class="row")
+        div(class="col-md-4")
+          img(class="img-fluid mb-4" src="img/icono_seguridad.svg", alt="icono seguridad")
+          h2(class="mb-4") Seguridad
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, vero vitae ea quos quasi ex assumenda
+          
+        div(class="col-md-4")
+          img(class="img-fluid mb-4" src="img/icono_destinos.svg", alt="icono destino")
+          h2(class="mb-4") Destinos
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, vero vitae ea quos quasi ex assumenda
+          
+        div(class="col-md-4")
+          img(class="img-fluid mb-4" src="img/icono_precios.svg", alt="icono precio")
+          h2(class="mb-4") Precios
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, vero vitae ea quos quasi ex assumenda
