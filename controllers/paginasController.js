@@ -25,14 +25,34 @@ const paginaViajes = async (req, res) => {
 
 const paginaTestimoniales = (req, res) => {
 
-  res.render('../view/viajes.pug', {
+  res.render('../view/testimoniales.pug', {
     pagina: 'Testimoniales'
   });
+}
+
+const paginaDetalleViaje = async (req, res) => {
+
+  // Optenemos el comodiin
+  const { slug } = req.params
+
+  try {
+    const viaje = await Viaje.findOne({ where: { slug } })
+
+    res.render('../view/viaje.pug', {
+      pagina: 'Información Viaje',
+      viaje
+    })
+
+  } catch (error) {
+    console.log(error);
+  }
+
 }
 
 export {
   paginaInicio,
   paginaNosotros,
   paginaViajes,
-  paginaTestimoniales
+  paginaTestimoniales,
+  paginaDetalleViaje
 }
