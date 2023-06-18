@@ -1,3 +1,6 @@
+import { Viaje } from '../models/Viaje.js';
+
+
 const paginaInicio = (req, res) => {
   res.render('../view/inicio.pug', {
     pagina: 'Inicio'
@@ -10,15 +13,20 @@ const paginaNosotros = (req, res) => {
   });
 }
 
-const paginaViajes = (req, res) => {
+const paginaViajes = async (req, res) => {
+  // Consultar la BD
+  const viajes = await Viaje.findAll();
+
   res.render('../view/viajes.pug', {
-    pagina: 'Viajes'
+    pagina: 'Próximos Viajes',
+    viajes
   });
 }
 
 const paginaTestimoniales = (req, res) => {
+
   res.render('../view/viajes.pug', {
-    pagina: 'Viajes'
+    pagina: 'Testimoniales'
   });
 }
 
