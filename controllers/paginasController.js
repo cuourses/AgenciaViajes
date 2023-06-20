@@ -2,11 +2,21 @@ import { Viaje } from '../models/Viaje.js';
 import { Testimonial } from '../models/Testimoniales.js';
 
 
-const paginaInicio = (req, res) => {
-  res.render('../view/inicio.pug', {
-    pagina: 'Inicio',
-    clase: 'home'
-  });
+const paginaInicio = async (req, res) => {
+
+  try {
+    // Obtenamos los testimoniles de la bd
+    const viajes = await Viaje.findAll({ limit: 3 });
+
+    res.render('../view/inicio.pug', {
+      pagina: 'Inicio',
+      clase: 'home',
+      viajes,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
 }
 
 const paginaNosotros = (req, res) => {
