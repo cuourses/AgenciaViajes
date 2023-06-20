@@ -14,10 +14,11 @@ block contenido
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet libero id libero gravida ultrices. Aliquam non vestibulum est. Aenean aliquet suscipit eleifend. Cras at diam ut dolor maximus facilisis sed quis justo. Etiam mollis vehicula augue, sed hendrerit quam congue a. Vestibulum dictum nulla a lectus malesuada, non dictum nisl suscipit. Maecenas vehicula eros ut lacus commodo, et varius tellus ultrices. Vivamus gravida rutrum lectus vel ornare.
         
         p Nam neque lectus, rhoncus ac metus et, placerat gravida erat. Vestibulum eu vulputate purus, cursus porta nulla. Sed dictum tortor sit amet ante vestibulum tempus. Sed ligula arcu, ultrices in massa vel, eleifend pulvinar dolor.
+        
       div(class="col-md-6 mb-5")
         img(src="/img/inicio_nosotros.jpg", alt="imagen nosotros" class="img-fluid")
       
-      include ./layout/bloque_viajes
+    include ./layout/bloque_viajes
       
   div(class="descuento")
     div(class="container")
@@ -28,9 +29,7 @@ block contenido
             p(class="titulo") Viaje a Canada
             p(class="fecha") 20 de Marzo de 2023 - 28 de Marzo de 2023
             p(class="precio") $800 USD
-                
-          
-  div(class="container")
+            
+  div(class="container mt-5")
     h2(class="mt-5 text-center") Testimoniales
-    
     include ./layout/bloque_testimoniales
