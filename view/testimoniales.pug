@@ -5,17 +5,22 @@ block contenido
     h1(class="text-center mt-5")= pagina
     div(class="row")
       h2(class="text-center d-block w-100") Agrega un Testimonial
-      div(class="row justify-content-center col")
-        div(class="col-8")
-          form(action="" method="POST") 
-            div(class="form-group")
-              label(for="nombre") Nombre
-              input(id="nombre", class="form-control", type="text", placeholder="Tu nombre", name="nombre")
-            div(class="form-group")
-              label(for="correo") Correo
-              input(id="correo", class="form-control", type="text", placeholder="Tu correo", name="correo")
-            div(class="form-group")
-              label(for="mensaje") Mensaje
-              textarea(id="mensaje", class="form-control", type="text", placeholder="mensaje", name="mensaje" rows="3")
-              
-            input(type="submit" class="btn btn-success btn-block" )
+    
+    if(errores)
+      each error in errores 
+        div(class="alert col alert-danger text-center")= error.mensaje 
+        
+    div(class="row justify-content-center col")
+      div(class="col-8")
+        form(action="/testimoniales" method="POST") 
+          div(class="form-group")
+            label(for="nombre") Nombre
+            input(id="nombre", class="form-control", type="text", placeholder="Tu nombre", name="nombre" value= nombre)
+          div(class="form-group")
+            label(for="correo") Correo
+            input(id="correo", class="form-control", type="text", placeholder="Tu correo", name="correo" value= correo)
+          div(class="form-group")
+            label(for="mensaje") Mensaje
+            textarea(id="mensaje", class="form-control", type="text", placeholder="mensaje", name="mensaje" rows="3")= mensaje
+            
+          input(type="submit" class="btn btn-success btn-block" )

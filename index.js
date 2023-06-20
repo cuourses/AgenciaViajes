@@ -25,6 +25,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// habilitar body parcel para leer datos de formulario
+app.use(express.urlencoded({ extended: true }));
+
 // Definir carpeta public
 app.use(express.static('public'));
 
