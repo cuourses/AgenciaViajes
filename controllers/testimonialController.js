@@ -20,12 +20,15 @@ const guardarTestimoniales = async (req, res) => {
   }
 
   if (errores.length > 0) {
+    const testimoniales = await Testimonial.findAll();
+
     res.render('../view/testimoniales.pug', {
       pagina: 'Testimoniales',
       errores,
       nombre,
       correo,
-      mensaje
+      mensaje,
+      testimoniales
     })
   } else {
 
@@ -34,7 +37,7 @@ const guardarTestimoniales = async (req, res) => {
       await Testimonial.create({
         nombre,
         correo,
-        mensaje
+        mensaje,
       });
 
       res.redirect('/testimoniales');
